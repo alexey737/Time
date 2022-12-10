@@ -1,0 +1,54 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import '_clock.scss';
+@import '_stopwatch.scss';
+@import '_loader.scss';
+
+.time {
+    min-height: 100vh;
+    
+    &__container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__navigation {
+        display: flex;
+        color: $navigation-color;
+        background: $navigation-background;
+        justify-content: space-between;
+        font-size: 1.25rem;
+        margin: 0 5rem; 
+        border-radius: 15px;
+        box-shadow: $navigation-shadow;
+        min-width: 500px;
+        
+        @media screen and (max-width: 768px) {
+            font-size: 1rem;
+            margin: 0 auto; 
+            min-width: 400px;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            padding: 1.25rem;
+            flex: 1 1 33.3%;
+            border-radius: 15px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 1rem;
+            }
+
+            &.active {
+                box-shadow: $navigation-link-shadow;
+            }
+        }
+    }
+}
