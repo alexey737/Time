@@ -1,7 +1,15 @@
-@mixin rotateMarkupItems() {
+@mixin rotateClockMarkupItems() {
     @for $i from 1 to 7 {
-        .markup__block:nth-child(#{$i}) {
+        .clock-markup__block:nth-child(#{$i}) {
             transform: rotate(30deg * $i)
+        }
+    }
+}
+
+@mixin rotateTimerMarkupItems() {
+    @for $i from 1 to 121 {
+        .timer-markup__block:nth-child(#{$i}) {
+            transform: translate(-50%, -50%) rotate(3deg * $i);
         }
     }
 }

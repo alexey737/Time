@@ -3,6 +3,7 @@
 
 @import '_clock.scss';
 @import '_stopwatch.scss';
+@import '_timer.scss';
 @import '_loader.scss';
 
 .time {
@@ -16,6 +17,7 @@
     }
 
     &__navigation {
+        position: relative;
         display: flex;
         color: $navigation-color;
         background: $navigation-background;
@@ -24,12 +26,11 @@
         margin: 0 5rem; 
         border-radius: 15px;
         box-shadow: $navigation-shadow;
-        min-width: 500px;
+        max-width: 100%;
         
         @media screen and (max-width: 768px) {
-            font-size: 1rem;
             margin: 0 auto; 
-            min-width: 400px;
+            min-width: 90vw;
         }
 
         a {
@@ -44,6 +45,10 @@
 
             @media screen and (max-width: 768px) {
                 font-size: 1rem;
+            }
+
+            @media screen and (max-width: 414px) {
+                font-size: 0.8rem;
             }
 
             &.active {

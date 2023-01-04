@@ -21,6 +21,11 @@
             height: 50vh;
             width: 50vh;
         }
+
+        @media screen and (max-width: 470px) {
+            height: 35vh;
+            width: 35vh;
+        }
     }
 
     &__term {
@@ -32,6 +37,10 @@
         @media screen and (max-width: 768px) {
             width: 80%;
             font-size: 3rem;
+        }
+
+        @media screen and (max-width: 470px) {
+            font-size: 2rem;
         }
     }
 
@@ -53,9 +62,13 @@
     &__buttons {
         display: flex;
         justify-content: center;
-        gap: 2.5rem;
+        gap: 10rem;
         flex-wrap: wrap;
         width: 80%;
+
+        @media screen and (max-width: 768px) {
+            gap: 5rem;
+        }
     }
 
     &__badge {
@@ -108,15 +121,15 @@
     cursor: pointer;
     transition: box-shadow .3s;
 
+    @media screen and (max-width: 768px) {
+        width: 4em;
+        height: 4em;
+    }
+
     & > img {
         position: absolute;
-        width: 50%;
-        height: 50%;
-
-        @media screen and (max-width: 768px) {
-            width: 40%;
-            height: 40%;
-        }
+        width: 40%;
+        height: 40%;
     }
 
     &:hover {
@@ -127,8 +140,7 @@
         display: none;
     }
 
-    &-stop.active,
-    &-reset.active {
+    &-stop.active {
         display: flex;
     }
 

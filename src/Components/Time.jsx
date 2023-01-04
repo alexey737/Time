@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Clock from "./Clock/Clock"
 import Stopwatch from "./Stopwatch/Stopwatch"
 import Layout from "./Layout"
-import Loader from "./Loader"
+import Timer from "./Timer/Timer"
 
 const Time = () => {
 
@@ -15,7 +15,7 @@ const Time = () => {
                         <Route path="/" element={<Layout />}>    
                             <Route index element={<Clock />}/>
                             <Route path="/stopwatch" element={<Stopwatch />}/>
-                            <Route path="/timer" element={<Loader />}/>
+                            <Route path="/timer" element={<Timer />}/>
                         </Route>
                     </Routes>
                 </div>

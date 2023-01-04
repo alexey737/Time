@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const StopwatchButtons = (props) => {
-    const { term, setTerm, setIsStart, buttonIsActive, setIsReset, checkIsReset } = props
+    const { term, setTerm, setIsStart, buttonIsActive, setIsReset } = props
 	const [myInterval, setMyInterval] = useState(null)
 
 	let updateMs = term.ms
@@ -25,14 +25,14 @@ const StopwatchButtons = (props) => {
 					updateS = 0
 				}
 
-				if (updateMs === 100) {
+				if (updateMs === 50) {
 					updateS++
 					updateMs = 0
 				}
 
 				updateMs++
 				setTerm({ ms: updateMs, ss: updateS, mm: updateM, hh: updateH })
-			}, 10)
+			}, 20)
 		)
 	}
 
@@ -53,10 +53,10 @@ const StopwatchButtons = (props) => {
                 <img src="./icons/play-icon.svg" alt="Start" />
             </button>
             <button onClick={handlerStop} className={`buttons__item buttons__item-stop${buttonIsActive()}`}>
-                <img src="./icons/pause-icon.svg" alt="Start" />
+                <img src="./icons/pause-icon.svg" alt="Stop" />
             </button>
-            <button onClick={handlerReset} className={`buttons__item buttons__item-reset${checkIsReset()}`}>
-                <img src="./icons/reset-icon.svg" alt="Start" />
+            <button onClick={handlerReset} className="buttons__item buttons__item-reset">
+                <img src="./icons/reset-icon.svg" alt="Reset" />
             </button>
         </div>
     )
